@@ -11,24 +11,13 @@ html, body{
   display: block;
 }
 
-#details{
-  background:rgb(255, 146, 146);
-
-}
-
-#reviews{
-  background:rgb(154, 230, 253);
-}
-
 #booking{
-  position: fixed;
-  top: 620px;
-  right: 1.75%;
-  background: purple;
-  height: 250px;
-  width: 30%;
-  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 650px;
 }
+
+
 
 @media(max-width: 1200px){
   #booking{
