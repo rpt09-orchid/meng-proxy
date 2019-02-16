@@ -4,6 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "copyToServer": "rsync -av --exclude='.git/' --exclude='.env' -e 'ssh -i ~/.ssh/aws-eb.pem' . ubuntu@ec2-54-67-42-38.us-west-1.compute.amazonaws.com:/home/ubuntu/meng-rooms --delete",
+    "start-prod": "ssh -i ~/.ssh/aws-eb.pem ubuntu@ec2-54-67-42-38.us-west-1.compute.amazonaws.com 'cd /home/ubuntu/meng-rooms && pkill node; nohup npm start > ~/node_js.log & '",
+    "deploy": "npm run copyToServer && npm run start-prod",
     "start": "node ./server.js"
   },
   "author": "",
